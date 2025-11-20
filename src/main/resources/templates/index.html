@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Resource Manager - FIAP</title>
+    <link rel="stylesheet" th:href="@{/css/fiap-style.css}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1>Azure Resource Manager</h1>
+                <p class="subtitle">Dashboard de Recursos dos Alunos FIAP</p>
+            </div>
+            <button class="btn-refresh" onclick="refreshData()">↻ Atualizar</button>
+        </header>
+
+        <div th:if="${error}" class="alert alert-danger">
+            <strong>Erro:</strong> <span th:text="${error}"></span>
+        </div>
+
+        <div th:if="${warning}" class="alert alert-warning">
+            <strong>Aviso:</strong> <span th:text="${warning}"></span>
+        </div>
+
+        <div id="loading-message" class="loading-overlay" style="display: none;">
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+                <p>Carregando Recursos...</p>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <h2>Assinaturas <span class="badge-count" th:text="${totalSubscriptions}"></span></h2>
+                <div class="subscription-list">
+                    <div th:each="subscription : ${subscriptions}" class="subscription-item subscription-clickable" th:data-subscription-id="${subscription.id}" onclick="switchSubscription(this)">
+                        <div class="subscription-header">
+                            <span class="badge">👤</span>
+                            <span class="subscription-name-compact" th:text="${subscription.displayName}"></span>
+                        </div>
+                    </div>
+                </div>
+                <div th:if="${#lists.isEmpty(subscriptions)}" class="empty-state">
+                    <p>Nenhuma assinatura encontrada</p>
+                </div>
+            </aside>
+
+            <main class="content">
+                <div class="content-header">
+                    <h2>Grupos de Recursos <span class="badge-count" th:text="${totalGroups}"></span></h2>
+                </div>
+
+                <div class="toolbar">
+                    <div class="toolbar-group">
+                        <button class="btn btn-danger" onclick="deleteAllAllSubscriptions()" title="Deletar TODOS os grupos de TODAS as assinaturas">🗑️ Deletar Tudo</button>
+                    </div>
+                    <div class="toolbar-group" th:if="${currentSubscriptionId != null}">
+                        <button class="btn btn-primary" onclick="deleteSelectedGroups()">🗑️ Deletar Selecionados</button>
+                        <button class="btn btn-secondary" onclick="deleteAllSubscription()">🗑️ Deletar Todos da Assinatura</button>
+                        <button class="btn btn-secondary" onclick="selectAllGroups()">☑️ Selecionar Tudo</button>
+                        <button class="btn btn-secondary" onclick="deselectAllGroups()">☐ Desselecionar Tudo</button>
+                    </div>
+                </div>
+
+                <div class="resource-groups-container">
+                    <div th:each="group : ${resourceGroups}" class="resource-group-card resource-group-card-compact" th:data-group-name="${group.name}">
+                        <div class="card-header">
+                            <input type="checkbox" class="group-checkbox" th:value="${group.name}" onchange="updateSelectedCount()">
+                            <h4 th:text="${group.name}"></h4>
+                            <button class="btn-delete-single" th:data-group-name="${group.name}" onclick="deleteGroupFromButton(this)">🗑️</button>
+                        </div>
+
+                        <div class="card-body card-body-compact">
+                            <div class="info-grid info-grid-compact">
+                                <div class="info-item">
+                                    <strong>📍</strong>
+                                    <span th:text="${group.location}" class="text-small"></span>
+                                </div>
+                                <div class="info-item" style="cursor: pointer;" onclick="toggleResources(this)">
+                                    <strong>📊</strong>
+                                    <span class="badge-count resource-count-badge" th:text="${group.resourceCount}" title="Clique para expandir/recolher recursos"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Resources List (Hidden by default) -->
+                        <div class="resources-list" style="display: none;">
+                            <div th:if="${group.resourceCount > 0}" class="resources-content">
+                                <div th:each="resource : ${group.resources}" class="resource-item">
+                                    <div class="resource-header">
+                                        <span class="resource-icon">📦</span>
+                                        <span class="resource-name" th:text="${resource.name}"></span>
+                                    </div>
+                                    <div class="resource-details">
+                                        <p><strong>Tipo:</strong> <span class="resource-type" th:text="${resource.type}"></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div th:if="${group.resourceCount == 0}" class="empty-resources">
+                                <p>Nenhum recurso neste grupo</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div th:if="${#lists.isEmpty(resourceGroups) and currentSubscriptionId != null}" class="empty-state">
+                        <p>Nenhum grupo de recursos encontrado nesta assinatura</p>
+                    </div>
+
+                    <div th:if="${#lists.isEmpty(resourceGroups) and currentSubscriptionId == null}" class="empty-state">
+                        <p>Selecione uma assinatura para ver os grupos de recursos</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script th:src="@{/js/dashboard.js}"></script>
+</body>
+</html>
