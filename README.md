@@ -5,7 +5,7 @@ Dashboard web para gerenciamento de recursos Azure de alunos. Interface intuitiv
 ![Java](https://img.shields.io/badge/Java-17-blue)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2-green)
 ![Azure CLI](https://img.shields.io/badge/Azure%20CLI-Required-blue)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+![Copyright](https://img.shields.io/badge/Copyright-%C2%A9%202025-blue)
 
 ## 📋 Funcionalidades
 
