@@ -60,7 +60,7 @@ az login
 
 ## 👥 Autor
 
-**Prof.João Menk**
+**Prof. João Menk**
 
 ## 📝 License & Copyright
 
@@ -71,8 +71,3 @@ This project is proprietary. All rights reserved.
 No part of this project may be reproduced, distributed, or transmitted 
 in any form or by any means without the prior written permission of 
 the copyright holder.
-
-
----
-
-⭐ Se este projeto foi útil, deixe uma estrela no GitHub! ⭐
