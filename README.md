@@ -20,8 +20,11 @@ Dashboard web para gerenciamento de recursos Azure de alunos. Interface intuitiv
 git clone https://github.com/SEU-USUARIO/azure-resource-manager-dashboard.git
 
 cd azure-resource-manager-dashboard
+
 az login
+
 mvn clean install
+
 mvn spring-boot:run
 
 
