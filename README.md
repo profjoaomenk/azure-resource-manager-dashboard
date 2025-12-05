@@ -1,4 +1,4 @@
-# Azure Resource Manager Dashboard - FIAP
+# Azure Resource Manager Dashboard
 
 Dashboard web para gerenciamento de recursos Azure dos alunos da FIAP. Interface intuitiva para visualizar, monitorar e deletar grupos de recursos de múltiplas assinaturas Azure.
 
@@ -56,11 +56,18 @@ az login
 
 ## 👥 Autor
 
-**João Menk & ChatGPT**
+**Prof.João Menk**
 
-## 📝 Licença
+## 📝 License & Copyright
 
-MIT
+Copyright © 2025 - João Menk and the Azure Resource Manager Dashboard contributors
+
+This project is proprietary. All rights reserved.
+
+No part of this project may be reproduced, distributed, or transmitted 
+in any form or by any means without the prior written permission of 
+the copyright holder.
+
 
 ---
 
