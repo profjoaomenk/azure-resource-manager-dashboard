@@ -1,6 +1,6 @@
 # Azure Resource Manager Dashboard
 
-Dashboard web para gerenciamento de recursos Azure dos alunos da FIAP. Interface intuitiva para visualizar, monitorar e deletar grupos de recursos de múltiplas assinaturas Azure.
+Dashboard web para gerenciamento de recursos Azure de alunos. Interface intuitiva para visualizar, monitorar e deletar grupos de recursos de múltiplas assinaturas Azure.
 
 ![Java](https://img.shields.io/badge/Java-17-blue)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2-green)
