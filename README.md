@@ -47,59 +47,6 @@ Principais recursos:
 
 ---
 
-## Estrutura de Diretórios
-
-azure-resource-manager-dashboard/
-├── pom.xml
-├── src
-│ ├── main
-│ │ ├── java
-│ │ │ └── com
-│ │ │ └── fiap
-│ │ │ └── azure
-│ │ │ ├── AzureResourceManagerApplication.java # Classe principal (Spring Boot)
-│ │ │ ├── config
-│ │ │ │ └── AzureCliConfig.java # Descoberta e configuração do path da Azure CLI
-│ │ │ ├── controller
-│ │ │ │ └── ResourceController.java # Controller MVC + endpoints REST de deleção
-│ │ │ ├── dto
-│ │ │ │ ├── ResourceDTO.java
-│ │ │ │ ├── ResourceGroupDTO.java
-│ │ │ │ ├── SubscriptionDTO.java
-│ │ │ │ └── SubscriptionWithResourcesDTO.java
-│ │ │ ├── exception
-│ │ │ │ └── AzureCliException.java # Exceção customizada para falhas na CLI
-│ │ │ ├── model
-│ │ │ │ ├── Resource.java
-│ │ │ │ ├── ResourceGroup.java
-│ │ │ │ └── Subscription.java
-│ │ │ ├── service
-│ │ │ │ ├── AzureAuthService.java # Valida sessão ativa na Azure CLI (az login)
-│ │ │ │ ├── AzureCliService.java # Lógica principal de integração com CLI
-│ │ │ │ ├── ResourceParserService.java # Parse de JSON → models
-│ │ │ │ └── DeletionStatusService.java # Gerencia status assíncrono de deleções
-│ │ │ └── util
-│ │ │ └── AzureCommandExecutor.java # Executor de comandos az via ProcessBuilder
-│ │ └── resources
-│ │ ├── application.properties # Configurações da aplicação
-│ │ ├── templates
-│ │ │ └── index.html # Dashboard Thymeleaf
-│ │ └── static
-│ │ ├── css
-│ │ │ └── dash-style.css # Estilos customizados do dashboard
-│ │ └── js
-│ │ └── dashboard.js # Lógica de frontend (JS puro)
-│ └── test
-│ └── java
-│ └── com
-│ └── fiap
-│ └── azure
-│ └── service
-│ └── AzureCliServiceTest.java # Testes básicos
-
-
----
-
 ## Pré-requisitos
 
 Para executar o projeto localmente, é necessário:
