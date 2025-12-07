@@ -138,13 +138,13 @@ Deleções em massa são executadas de forma **assíncrona** utilizando `Complet
 
 O dashboard é dividido em três áreas principais:
 
-- 1. Header (Topo)
+- 1) Header (Topo)
 Exibe o título da aplicação, um indicador da assinatura ativa (com animação pulsante) e botão de atualização.
 
-- 2. Sidebar (Coluna Esquerda)
+- 2) Sidebar (Coluna Esquerda)
 Lista todas as assinaturas ativas que possuem grupos de recursos. Clique em qualquer uma para selecioná-la.
 
-- 3. Painel Principal (Centro/Direita)
+- 3) Painel Principal (Centro/Direita)
 Exibe os grupos de recursos da assinatura selecionada em forma de cards.
 
 
