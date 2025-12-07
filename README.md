@@ -123,6 +123,10 @@ Deleções em massa são executadas de forma **assíncrona** utilizando `Complet
 
 ## Manual de Utilização
 
+
+<img width="1204" height="468" alt="image" src="https://github.com/user-attachments/assets/1f7dc614-eee2-4595-9068-2beeebee7c8b" />
+
+
 ### 1. Acesso ao Dashboard
 
 1. Abra o navegador em `http://localhost:8080`.
