@@ -148,7 +148,7 @@ Lista todas as assinaturas ativas que possuem grupos de recursos. Clique em qual
 Exibe os grupos de recursos da assinatura selecionada em forma de cards.
 
 
-### 🔑 1. Acesso ao Dashboard
+### 1. Acesso ao Dashboard 🔑
 
 1. Abra o navegador em `http://localhost:8080`.
 2. Certifique-se de que **já fez** `az login` no terminal que tem acesso à sua conta Azure.
@@ -156,7 +156,7 @@ Exibe os grupos de recursos da assinatura selecionada em forma de cards.
 
 ---
 
-### 2. 🔍 Lista de Assinaturas
+### 2. Lista de Assinaturas 🔍
 
 Na coluna esquerda (sidebar):
 
@@ -169,7 +169,7 @@ Na coluna esquerda (sidebar):
 
 ---
 
-### 3. 👁️ Visualizando Grupos de Recursos
+### 3. Visualizar Grupos de Recursos 👁️
 
 Na área principal:
 
@@ -190,7 +190,7 @@ Funcionalidades por card:
 
 ---
 
-### 🗑️ 4. Deleção de Recursos
+### 4. Deleção de Recursos 🗑️
 
 #### 4.1 Deletar um único grupo
 
