@@ -6,7 +6,7 @@ Dashboard em **Java Spring Boot** para apoiar aulas de Cloud/DevOps, permitindo 
 
 ---
 
-## Visão Geral
+## 📋 Visão Geral
 
 Este projeto implementa um painel web que consome a **Azure CLI** para gerenciar recursos de assinaturas Azure de forma visual e centralizada.
 
@@ -27,7 +27,7 @@ Principais recursos:
 
 ---
 
-## Tecnologias Utilizadas
+## 🔧 Tecnologias Utilizadas
 
 - **Linguagem**: Java 17  
 - **Framework**: Spring Boot 3.2.x  
@@ -47,7 +47,7 @@ Principais recursos:
 
 ---
 
-## Pré-requisitos
+## 📦 Pré-requisitos
 
 Para executar o projeto localmente, é necessário:
 
@@ -56,19 +56,26 @@ Para executar o projeto localmente, é necessário:
 - **Azure CLI** instalada e acessível:
   - Windows: `az`/`az.cmd`
   - Linux / MacOS: `az`
-- Fazer login na CLI antes de usar o dashboard:
 
+🔑 Configurar Azure CLI
+
+⚠️ Importante: O dashboard depende de uma sessão ativa do Azure CLI para funcionar.
+
+- Passo 1: Fazer Login
 az login
 
-
-Se você usa múltiplos tenants/contas, certifique-se de que a conta correta está ativa:
-
+- Passo 2: Verificar Assinatura Ativa
 az account show
 
+Retorna a assinatura padrão configurada. Se necessário, mudar:
+az account set --subscription "nome-ou-id-da-subscription"
+
+- Passo 3: Listar Assinaturas Disponíveis
+az account list --output table
 
 ---
 
-## Como Rodar o Projeto
+## 🚀 Instalação e Execução
 
 ### 1. Clonar o repositório
 
@@ -121,13 +128,27 @@ Deleções em massa são executadas de forma **assíncrona** utilizando `Complet
 
 ---
 
-## Manual de Utilização
+## 📖 Manual de Utilização
 
 
 <img width="1204" height="468" alt="image" src="https://github.com/user-attachments/assets/1f7dc614-eee2-4595-9068-2beeebee7c8b" />
 
 
-### 1. Acesso ao Dashboard
+🎯 Interface Principal
+
+O dashboard é dividido em três áreas principais:
+
+- 1. Header (Topo)
+Exibe o título da aplicação, um indicador da assinatura ativa (com animação pulsante) e botão de atualização.
+
+- 2. Sidebar (Coluna Esquerda)
+Lista todas as assinaturas ativas que possuem grupos de recursos. Clique em qualquer uma para selecioná-la.
+
+- 3. Painel Principal (Centro/Direita)
+Exibe os grupos de recursos da assinatura selecionada em forma de cards.
+
+
+### 🔑 1. Acesso ao Dashboard
 
 1. Abra o navegador em `http://localhost:8080`.
 2. Certifique-se de que **já fez** `az login` no terminal que tem acesso à sua conta Azure.
@@ -135,7 +156,7 @@ Deleções em massa são executadas de forma **assíncrona** utilizando `Complet
 
 ---
 
-### 2. Lista de Assinaturas
+### 2. 🔍 Lista de Assinaturas
 
 Na coluna esquerda (sidebar):
 
@@ -148,7 +169,7 @@ Na coluna esquerda (sidebar):
 
 ---
 
-### 3. Grupos de Recursos
+### 3. 👁️ Visualizando Grupos de Recursos
 
 Na área principal:
 
@@ -169,7 +190,7 @@ Funcionalidades por card:
 
 ---
 
-### 4. Deleção de Recursos
+### 🗑️ 4. Deleção de Recursos
 
 #### 4.1 Deletar um único grupo
 
@@ -228,7 +249,7 @@ Funcionalidades por card:
 
 ---
 
-## Tratamento de Erros
+## ⚠️ Tratamento de Erros
 
 - Falta de sessão ativa na Azure CLI:
   - Gera mensagem clara para o usuário com instruções de executar `az login`.
@@ -248,7 +269,7 @@ Funcionalidades por card:
 
 ---
 
-## Licença e Direitos Autorais
+## © Licença e Direitos Autorais
 
 Este projeto é de uso educacional, focado em práticas de DevOps e Cloud Computing com Azure.
 
